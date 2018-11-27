@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col col-12 col-md-8 offset-md-2>
+        <!--<ion-list>
+          <ion-item *ngFor="let wp of sercaeLocations">
+            <ion-label>{{wp.workplace.description}}</ion-label>
+            <ion-checkbox color="dark" checked="false"></ion-checkbox>
+          </ion-item>
+        </ion-list>-->
+        <ion-list>
+          <ion-item *ngFor="let wp of sercaeLocations;let j =index">
+            <ion-label>{{wp.workplace.description}}</ion-label>
+            <ion-checkbox [(ngModel)]="wp.checked"
+                          (ionChange)="updatedWorkPlaces(j,wp,wp.checked)"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        {{sercaeLocationsChecked | json}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer no-border>
+  <ion-row text-center align-items-center>
+    <ion-col col-12 col-md-8 offset-md-2>
+      <button
+        ion-button
+        full
+        [disabled]="this.sercaeLocationsChecked.length==0"
+        color="yellowBluuLink"
+        (click)="submitWorkPlaces()"
+      >SIGUIENTE
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

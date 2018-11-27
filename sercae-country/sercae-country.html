@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <!--<ion-buttons end>
+      <ion-title align-items-end>
+        <img alt="Bluulink logo" height="40" src="assets/imgs/util/justwordwhite.png">
+      </ion-title>
+    </ion-buttons>-->
+  </ion-navbar>
+</ion-header>
+<ion-content *ngIf="showPanel">
+  <ion-row>
+    <ion-col>
+      {{sercaeCountriesChecked | json}}
+    </ion-col>
+  </ion-row>
+</ion-content>
+<ion-content has-header="true" *ngIf="!showPanel">
+  <div class="container">
+    <div class="cell-row cell-row-1">
+      <div class="cell-1" (click)="goToCountry('España')">
+        <div class="principal">
+          <div>
+            <ion-icon name="md-pin"
+                      [ngStyle]="{'color':SercaeCountries[0].workPlaces.length> 0 ? '#05ff8d' : 'white' }"></ion-icon>
+            <!--<ion-badge color="danger">100</ion-badge>-->
+          </div>
+          <div>España</div>
+        </div>
+      </div>
+      <div class="cell-2" (click)="goToCountry('Italia')">
+        <div class="principal">
+          <div>
+            <ion-icon name="md-pin" [ngStyle]="{'color':SercaeCountries[1].workPlaces.length> 0 ? '#05ff8d' : 'white' }"></ion-icon>
+            <!--<ion-badge color="danger">100</ion-badge>-->
+          </div>
+          <div>Italia</div>
+        </div>
+      </div>
+    </div>
+    <div class="cell-row cell-row-2">
+      <div class="cell-3" (click)="goToCountry('Alemania')">
+        <div class="principal">
+          <div>
+            <ion-icon name="md-pin" [ngStyle]="{'color':SercaeCountries[2].workPlaces.length> 0 ? '#05ff8d' : 'white' }"></ion-icon>
+          </div>
+          <div>Alemania</div>
+        </div>
+      </div>
+      <div class="cell-4" (click)="goToCountry('Perú')">
+        <div class="principal radar">
+          <div>
+            <ion-icon name="md-pin" [ngStyle]="{'color':SercaeCountries[3].workPlaces.length> 0 ? '#05ff8d' : 'white' }"></ion-icon>
+          </div>
+          <div>Perú</div>
+        </div>
+      </div>
+    </div>
+    <div class="cell-row cell-row-3">
+      <div class="cell-5" (click)="goToCountry('Brasil')">
+        <div class="principal">
+          <div>
+            <ion-icon name="md-pin" [ngStyle]="{'color':SercaeCountries[4].workPlaces.length> 0 ? '#05ff8d' : 'white' }"></ion-icon>
+          </div>
+          <div>Brasil</div>
+        </div>
+      </div>
+      <div class="cell-6" (click)="goToCountry('Chile')">
+        <div class="principal">
+          <div>
+            <ion-icon name="md-pin" [ngStyle]="{'color':SercaeCountries[5].workPlaces.length> 0 ? '#05ff8d' : 'white' }"></ion-icon>
+          </div>
+          <div>Chile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer no-border *ngIf="!showPanel">
+  <ion-row text-center align-items-center>
+    <ion-col col-12 col-md-8 offset-md-2>
+      <button
+        ion-button
+        full
+        [disabled]="!controlSubmit"
+        (click)="submitCountry()"
+        color="yellowBluuLink"
+      >SIGUIENTE
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
+
