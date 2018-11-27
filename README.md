@@ -1,3 +1,3 @@
 # Binding-ionic-Checkbox-Performance
 DEMO:
-![](GIF.gif)
+![](DEMO_1.gif)
